@@ -1,0 +1,24 @@
+{
+    "name": "ydl",
+    "version": "1.0.0",
+    "description": "Youtube download MP3",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sldevand/ydl.git"
+    },
+    "author": "Sébastien Lorrain",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sldevand/ydl/issues"
+    },
+    "homepage": "https://github.com/sldevand/ydl#readme",
+    "dependencies": {
+        "bootstrap": "^4.1.1",
+        "jquery": "latest",
+        "popper.js": "latest"
+    }
+}
