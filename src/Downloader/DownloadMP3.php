@@ -18,7 +18,7 @@ class DownloadMP3
 
         $out = OUTPUT;
 
-        exec("cd $out && /usr/local/bin/youtube-dl -x --audio-format mp3 $url", $status);
+        exec("cd $out && /usr/local/bin/youtube-dl -x --audio-format mp3 -o '%(title)s.%(ext)s' $url", $status);
 
         $result = '';
 
