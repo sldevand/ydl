@@ -2,9 +2,6 @@
 
 require_once 'setup.php';
 
-use App\Archiver\Archiver;
-use App\Converter\SVGManager;
-use App\Converter\SVGToPngConverter;
 use App\Downloader\DownloadMP3;
 use App\Token\TokenManager;
 
