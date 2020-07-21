@@ -16,7 +16,8 @@ REMOTE_WWW_PATH=/var/www
 REMOTE_TMP_PATH=/home/pi/tmp
 REMOTE_APP_NAME=ydl
 REMOTE_APP_PATH=$REMOTE_WWW_PATH/$REMOTE_APP_NAME
-REMOTE_COMPOSER=/usr/sbin/composer
+REMOTE_COMPOSER=/usr/bin/composer
+REMOTE_NPM=/usr/bin/npm
 
 myEcho "***Remote : removing previous site***"
 sudo rm -rvf $REMOTE_WWW_PATH/$REMOTE_APP_NAME
@@ -29,9 +30,10 @@ cd $REMOTE_APP_PATH &&
 sudo $REMOTE_COMPOSER install &&
 sudo rm -rfv $REMOTE_APP_PATH/composer.* &&
 
-myEcho "Remote : Install database" &&
-sudo chmod +x $REMOTE_APP_PATH/bin/console &&
-sudo $REMOTE_APP_PATH/bin/console setup:install &&
+myEcho "Remote : Npm Install" &&
+cd $REMOTE_APP_PATH &&
+sudo $REMOTE_NPM install &&
+sudo rm -rfv $REMOTE_APP_PATH/package* &&
 
 myEcho "Remote : Giving correct rights" &&
 sudo chown -R www-data:www-data $REMOTE_APP_PATH &&

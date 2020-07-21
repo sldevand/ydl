@@ -50,12 +50,10 @@ cd $LOCAL_BUILD_PATH
 
 myEcho "Local : Remove unused files for production"
 rm -rfv $LOCAL_REPO_PATH/deploy
-rm -rfv $LOCAL_REPO_PATH/src
 rm -rfv $LOCAL_REPO_PATH/*.md
 rm -rfv $LOCAL_REPO_PATH/.git
-rm -rfv $LOCAL_REPO_PATH/package.json
-rm -rfv $LOCAL_REPO_PATH/package-lock.json
 rm -rfv $LOCAL_REPO_PATH/.gitignore
+rm -rfv $LOCAL_REPO_PATH/resources
 
 ssh-add ~/.ssh/raspi3_key
 
