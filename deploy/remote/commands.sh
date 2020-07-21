@@ -18,6 +18,7 @@ REMOTE_APP_NAME=ydl
 REMOTE_APP_PATH=$REMOTE_WWW_PATH/$REMOTE_APP_NAME
 REMOTE_COMPOSER=/usr/bin/composer
 REMOTE_NPM=/usr/bin/npm
+REMOTE_ENV_FILE=/home/pi/deployFiles/ydl/.env
 
 myEcho "***Remote : removing previous site***"
 sudo rm -rvf $REMOTE_WWW_PATH/$REMOTE_APP_NAME
@@ -34,6 +35,9 @@ myEcho "Remote : Npm Install" &&
 cd $REMOTE_APP_PATH &&
 sudo $REMOTE_NPM install &&
 sudo rm -rfv $REMOTE_APP_PATH/package* &&
+
+myEcho "Remote : Add .env file" &&
+sudo cp $REMOTE_ENV_FILE $REMOTE_APP_PATH &&
 
 myEcho "Remote : Giving correct rights" &&
 sudo chown -R www-data:www-data $REMOTE_APP_PATH &&

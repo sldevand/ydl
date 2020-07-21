@@ -7,9 +7,6 @@ use App\Token\TokenManager;
 
 session_start();
 
-$targetDir = OUTPUT;
-
-
 $method = $_SERVER['REQUEST_METHOD'];
 
 //ROUTING

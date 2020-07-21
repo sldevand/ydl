@@ -15,10 +15,10 @@ class DownloadMP3
     public static function download($url)
     {
         $status = [];
+        $out = $_ENV['OUTPUT_PATH'];
+        $ydlPath = $_ENV['YDL_PATH'];
 
-        $out = OUTPUT;
-
-        exec("cd $out && /usr/local/bin/youtube-dl -x --audio-format mp3 -o '%(title)s.%(ext)s' $url", $status);
+        exec("cd $out && $ydlPath -x --audio-format mp3 -o '%(title)s.%(ext)s' $url", $status);
 
         $result = '';
 
