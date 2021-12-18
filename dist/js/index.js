@@ -32,9 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         xhr.open("POST", url);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                result.innerHTML = `<a href="output/${xhr.response}" class="btn btn-secondary" download>Download</a>`;
-                content.innerHTML = xhr.response;
                 clearInterval(interval);
+                window.location.replace(url);
             }
         }
         xhr.send(formData);

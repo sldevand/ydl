@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    margin-top: 120px;
+    margin-top: 20px;
 }
 
 .display-6 {
@@ -20,5 +20,3 @@ a {
 a:hover {
     text-decoration: none !important;
 }
-
-

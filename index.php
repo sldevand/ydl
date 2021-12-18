@@ -12,38 +12,21 @@ $method = $_SERVER['REQUEST_METHOD'];
 //ROUTING
 if ($method === "GET") {
     try {
-        createForm();
+        $title = "Youtube Download";
+
+        /** @var string $token */
+        $token = TokenManager::create();
+
+        $output = $_ENV['OUTPUT_PATH'];
+        $files = glob($output . '/*');
+        require VIEW . 'layout.phtml';
     } catch (Exception $e) {
         echo htmlspecialchars($e->getMessage());
     }
 } elseif ($method === "POST") {
     try {
-        execute($_POST['url']);
+        DownloadMp3::download($_POST['url']);
     } catch (Exception $e) {
         echo htmlspecialchars($e->getMessage());
     }
-}
-
-//CONTROLLER FUNCTIONS
-/**
- * @throws \Exception
- */
-function createForm()
-{
-    $title = "Youtube Download";
-
-    /** @var string $token */
-    $token = TokenManager::create();
-    require VIEW . 'form.phtml';
-}
-
-/**
- * @throws Exception
- */
-function execute($url)
-{
-
-    $result = DownloadMp3::download($url);
-
-    echo $result;
 }

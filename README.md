@@ -1,8 +1,8 @@
 # YDL
-Youtube MP3 downloader based on [youtube-dl](https://github.com/rg3/youtube-dl/).
+Youtube MP3 downloader based on [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
 ## Prerequisites
-* Install youtube-dl following this [Installation tutorial](https://github.com/rg3/youtube-dl/blob/master/README.md)
+* Install yt-dlp following this link : [INSTALLATION](https://github.com/yt-dlp/yt-dlp#installation)
 * Install composer
 * Install npm
 
